@@ -1,0 +1,16 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-searchbar (ionInput)="getItems($event)" (keyup)= "0" autofocus="true"></ion-searchbar>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <button ion-item *ngFor="let usuario of listaUsuarios" >
+      {{usuario.title}}
+    </button> 
+  </ion-list>
+</ion-content>
