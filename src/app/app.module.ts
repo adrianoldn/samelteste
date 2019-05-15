@@ -5,8 +5,11 @@ import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { ListPage } from '../pages/list/list';
+import { ScanPage } from '../pages/scan/scan';
 
 import { StatusBar } from '@ionic-native/status-bar';
+import { BarcodeScanner } from '@ionic-native/barcode-scanner';
+
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { UsuarioProvider } from '../providers/usuario/usuario';
 import { HttpClientModule } from '@angular/common/http';
@@ -15,7 +18,8 @@ import { HttpClientModule } from '@angular/common/http';
   declarations: [
     MyApp,
     HomePage, 
-    ListPage
+    ListPage,
+    ScanPage
   ],
   imports: [
     BrowserModule,
@@ -26,11 +30,13 @@ import { HttpClientModule } from '@angular/common/http';
   entryComponents: [
     MyApp,
     HomePage,
-    ListPage
+    ListPage, 
+    ScanPage
   ],
   providers: [
     StatusBar,
-    SplashScreen,
+    SplashScreen, 
+    BarcodeScanner,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     UsuarioProvider
   ]
